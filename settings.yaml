@@ -1,0 +1,37 @@
+# Model Configuration
+model:
+  name: "llama2"
+  max_tokens: 500
+  temperature: 0.7
+  top_p: 0.9
+
+# API Configuration
+api:
+  host: "0.0.0.0"
+  port: 8000
+  workers: 4
+
+# Ollama Configuration
+ollama:
+  base_url: "http://localhost:11434"
+  timeout: 60
+
+# Generation Settings
+generation:
+  default_target_length: 150
+  max_target_length: 500
+  max_bulk_size: 100
+
+# Prompts
+prompts:
+  system_prompt: |
+    You are a professional product description writer. Create engaging, 
+    SEO-friendly descriptions that focus on benefits and use persuasive language.
+  
+  description_template: |
+    Product Name: {product_name}
+    Category: {category}
+    Raw Information: {raw_text}
+    Key Features: {features}
+    
+    Write a compelling product description of approximately {target_length} words.
